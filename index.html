@@ -33,11 +33,13 @@
       }
       #chatlog p.user {
         text-align: right;
-        background-color: #eee;
+//        background-color: #eee;
+        background-color: Violet;
       }
       #chatlog p.bot {
         text-align: left;
-        background-color: #ddd;
+//        background-color: #ddd;
+        background-color: LightGray;
       }
       #suggestions {
         display: flex;
@@ -54,16 +56,15 @@
     </style>
   </head>
   <body>
-    <h1>GPT-3 Chatbot</h1>
+    <h1>Kombucha Prototype</h1>
     <form id="chatform">
       <input type="text" id="chatinput" placeholder="Enter your question here...">
       <button type="submit">Send</button>
     </form>
     <div id="suggestions">
-      <button type="button" data-message="What is your name?">What is your name?</button>
-      <button type="button" data-message="What is the weather like today?">What is the weather like today?</button>
-      <button type="button" data-message="Tell me a joke.">Tell me a joke.</button>
-      <button type="button" data-message="Do you have any hobbies?">Do you have any hobbies?</button>
+      <button type="button" data-message="What were apple's earnings in 2018?">What is your name?</button>
+      <button type="button" data-message="What is top of mind for Tim Cook these days?">What is the weather like today?</button>
+      <button type="button" data-message="Does Apple have supply chain issues?">Do you have any hobbies?</button>
     </div>
     <div id="chatlog"></div>
 
