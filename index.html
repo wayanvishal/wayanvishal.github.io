@@ -72,7 +72,7 @@
 		this.var1 = 10;
 			  	},
 				  update: function() {
-					  this.var2 = Math.round((this.var1 * 2000)/13);
+					  this.var2 = Math.round(this.var1 * 100);
 			  	}
 			  })
 
@@ -146,8 +146,14 @@
     
 <p>
 	<b>Here is some showcase of Tangle.</b>
-	<br>So, to absorb <span class="TKAdjustableNumber" data-var="var1" data-min="1" data-max="20" data-step="1"></span> billion US tons of carbon...</td>
-	<br>...we need to plant <b data-var="var2"> billion trees</b>.
+	
+	<table class="analysesTable" id="dynThing1">
+	 	<tr class="analysis" id="an1">-
+	 		<td>So, to absorb <span class="TKAdjustableNumber" data-var="var1" data-min="1" data-max="20" data-step="1"></span> billion US tons of carbon...</td>
+	 		<td>...we need to plant <b data-var="var2"> billion trees</b>.</td>
+	 	</tr>
+	 </table>
+	
 <p>
   
   </body>
