@@ -52,8 +52,16 @@
         background-color: #FFFFFF;
       }
     </style>
-	  <!-- script -->
-	  <script type="text/javascript">
+    <!-- script -->
+    <link rel="stylesheet" href="css/TangleKit.css" type="text/css">
+
+    <script type="text/javascript" src="js/Tangle.js"></script>
+    <script type="text/javascript" src="js/mootools.js"></script>
+    <script type="text/javascript" src="js/sprintf.js"></script>
+    <script type="text/javascript" src="js/BVTouchable.js"></script>
+    <script type="text/javascript" src="js/TangleKit.js"></script>
+
+    <script type="text/javascript">
 
        	 function setUpTangle () {
 		var analysis1 = document.getElementById("dynThing1");
@@ -71,6 +79,7 @@
   			;
 	  	}
     </script>
+	  	  
   </head>
 
   <body onload="setUpTangle();">
@@ -84,9 +93,7 @@
       <button type="button" data-message="What is top of mind for Tim Cook these days?">What is top of mind for Tim Cook these days?</button>
       <button type="button" data-message="Does Apple have supply chain issues?">Does Apple have supply chain issues?</button>
     </div>
-    <span class="TKAdjustableNumber" data-var="treespace" data-min="150" data-max="900" data-step="10"></span>
     <div id="chatlog"></div>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -137,5 +144,9 @@
       });
     </script>
     
+<p>
+	<b>Here is some showcase of Tangle.</b>
+<p>
+  
   </body>
 </html>
