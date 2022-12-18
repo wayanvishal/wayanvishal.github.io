@@ -11,12 +11,12 @@
       #chatinput {
         flex: 1;
         padding: 0.5em;
-        border: none;
+        border: 1px;
         border-radius: 3px 0 0 3px;
       }
       button[type="submit"] {
         padding: 0.5em 1em;
-        border: none;
+        border: 1px;
         border-radius: 0 3px 3px 0;
         background-color: #3366BB;
         color: white;
@@ -147,19 +147,11 @@
 <p>
 	<b>Here is some showcase of Tangle.</b>
 	
-	<table class="analysesTable" id="treeAnalysis1">
-	 <tr class="analysis" id="an1">-
-	  <td>A tree absorbs 13 pounds of carbon annually.</td>
-	  <td>So, to absorb <span class="TKAdjustableNumber" data-var="carbonintake" data-min="1" data-max="20" data-step="1"></span> billion US tons of carbon...</td>
-	  <td>...we need to plant <b data-var="treeamount"> billion trees</b>.</td>
-	 </tr>
-	</table>
-
 	<table class="analysesTable" id="dynThing1">
 	 	<tr class="analysis" id="an1">-
-		 <td>A tree absorbs 13 pounds of carbon annually.</td>
-	 	 <td>So, to absorb <span class="TKAdjustableNumber" data-var="dynVar1" data-min="1" data-max="20" data-step="1"></span> billion US tons of carbon...</td>
-	 	 <td>...we need to plant <b data-var="dynVar2"> billion trees</b>.</td>
+		 <td>Some thing we want to be dynamic.</td>
+	 	 <td>So, when thing1 is <span class="TKAdjustableNumber" data-var="dynVar1" data-min="1" data-max="20" data-step="1"></span> thing units...</td>
+	 	 <td>...thing2 should be <b data-var="dynVar2"> 100 times more.</b>.</td>
 	 	</tr>
 	 </table>
 	
