@@ -52,6 +52,25 @@
         background-color: #FFFFFF;
       }
     </style>
+	  <!-- script -->
+	  <script type="text/javascript">
+
+       	 function setUpTangle () {
+		var analysis1 = document.getElementById("dynThing1");
+	  	var analysis2 = document.getElementById("dynThing2");
+
+  		var analysis1Tangle = new Tangle(analysis1, {
+		initialize: function() {
+		this.var1 = 10;
+			  	},
+				  update: function() {
+					  this.var2 = Math.round((this.var1 * 2000)/13);
+			  	}
+			  })
+
+  			;
+	  	}
+    </script>
   </head>
 
   <body onload="setUpTangle();">
@@ -68,68 +87,7 @@
     <span class="TKAdjustableNumber" data-var="treespace" data-min="150" data-max="900" data-step="10"></span>
     <div id="chatlog"></div>
 
-    	<!-- script -->
-	    <script type="text/javascript">
 
-        function setUpTangle () {
-
-  			var analysis1 = document.getElementById("treeAnalysis1");
-	  		var analysis2 = document.getElementById("treeAnalysis2");
-		  	var analysis4 = document.getElementById("solventAnalysis1");
-			  var analysis5 = document.getElementById("climeworksAnalysis1");
-			  var analysis6 = document.getElementById("ceAnalysis1");
-
-  			var analysis1Tangle = new Tangle(analysis1, {
-	  			initialize: function() {
-		  			this.carbonintake = 10;
-			  	},
-				  update: function() {
-					  this.treeamount = Math.round((this.carbonintake * 2000)/13);
-			  	}
-			  })
-
-  			var analysis2Tangle = new Tangle(analysis2, {
-	  			initialize: function() {
-		  			this.treespace = 150;
-			  		this.treeamount = 1538;
-				  },
-				  update: function() {
-  					this.treespaceamount = Math.round((this.treespace * (this.treeamount)/1000)/10.76);
-	  			}
-		  	})
-
-  			var analysis4Tangle = new Tangle(analysis4, {
-	  			initialize: function() {
-	  				this.carbonintake = 10;
-	  			},
-		  		update: function() {
-		  			this.solventNeeded_mea = Math.round((this.carbonintake*(11/3))*(61.084/44.01));
-		  			this.solventNeeded_mdea = Math.round((this.carbonintake*(11/3))*(119.164/44.01));
-		  			this.solventNeeded_dea_dga = Math.round((this.carbonintake*(11/3))*(105.137/44.01));
-	  			}
-	  		})
-
-  			var analysis5Tangle = new Tangle(analysis5, {
-	  			initialize: function() {
-	  				this.carbonintake = 10;
-		  		},
-  				update: function() {
-  					this.climeDacsBuilt = Math.round(this.carbonintake/(4000*1.10231*(27/99))*1000);
-	  			}
-  			})
-
-	  		var analysis6Tangle = new Tangle(analysis6, {
-		  		initialize: function() {
-			  		this.carbonintake = 10;
-  				},
-	  			update: function() {
-		  			this.ceDacsBuilt = Math.round(this.carbonintake/(1000000*(27/99))*10000000);
-  				}
-	  		})
-
-  			;
-	  	}
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
