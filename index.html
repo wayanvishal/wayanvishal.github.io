@@ -58,7 +58,7 @@
         background-color: #FFFFFF;
       }
     </style>
-    <!-- script -->
+    <!-- script for tangle stuff-->
     <link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
 
     <script type="text/javascript" src="TangleKit/Tangle.js"></script>
@@ -96,6 +96,7 @@
       <input type="text" id="chatinput" placeholder="Enter your question here...">
       <button type="submit">Send...</button>
     </form>
+    <!-- Suggested questions.  Need to link these to input, and to get these from the backend.-->  
     <div id="suggestions">
       <button type="button" suggeestedQuestion1="What were apple's earnings in 2018?">What were apple's earnings in 2018?</button>
       <button type="button" suggeestedQuestion2="What is top of mind for Tim Cook these days?">What is top of mind for Tim Cook these days?</button>
@@ -105,6 +106,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Script to call openai.  I am not redirecting it thru the backend.  If I get a chance I'll do that tonight.-->  
     <script>
       const API_KEY = "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";
       const chatform = document.getElementById("chatform");
