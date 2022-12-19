@@ -11,7 +11,7 @@
       #chatinput {
         flex: 1;
         padding: 0.5em;
-        border: 1px;
+        border: 10px;
         border-radius: 3px 0 0 3px;
       }
       button[type="submit"] {
@@ -91,9 +91,9 @@
       <button type="submit">Send</button>
     </form>
     <div id="suggestions">
-      <button type="button" data-message="What were apple's earnings in 2018?">What were apple's earnings in 2018?</button>
-      <button type="button" data-message="What is top of mind for Tim Cook these days?">What is top of mind for Tim Cook these days?</button>
-      <button type="button" data-message="Does Apple have supply chain issues?">Does Apple have supply chain issues?</button>
+      <button type="button" suggeestedQuestion1="What were apple's earnings in 2018?">What were apple's earnings in 2018?</button>
+      <button type="button" suggeestedQuestion2="What is top of mind for Tim Cook these days?">What is top of mind for Tim Cook these days?</button>
+      <button type="button" suggeestedQuestion3="Does Apple have supply chain issues?">Does Apple have supply chain issues?</button>
     </div>
     <div id="chatlog"></div>
 
@@ -149,7 +149,7 @@
 	<p>
 	<b>Basic showcase of Tangle.</b>
 	
-	<p id="dynThing1">When thing1 is <span class="TKAdjustableNumber" data-var="dynVar1" data-min="1" data-max="1000" data-step="1"> </span> Mega thing units...
+	<p id="dynThing1">When thing1 is <span class="TKAdjustableNumber" data-var="dynVar1" data-min="1" data-max="1000" data-step="10"> </span> Mega thing units...
 		<br>...thing2 should be <b data-var="dynVar2"> </b> Kilo thing units.
 		<br>...thing3 should be <b data-var="dynVar3"> </b> thing units.
 		<br>...thing4 should be <b data-var="dynVar4"> </b> Giga thing units.
