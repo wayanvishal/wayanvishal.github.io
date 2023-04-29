@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.background-image {
+  background-image: url("sky-blue.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  padding: 50px;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  font-size: 60px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.box {
+  background-color: #fff;
+  color: #000;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.tabs a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.tabs a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.buttons {
+  margin-top: 50px;
+}
+
+.buttons button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #000;
+}
