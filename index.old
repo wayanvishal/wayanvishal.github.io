@@ -1,1 +1,169 @@
 
+<html>
+  <head>
+    <title>Kombucha Prototype</title>
+    <style>
+      body {
+        font-family: monospace;
+      }
+      #chatform {
+        display: flex;
+      }
+      #chatinput {
+      	width: 60%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        flex: 1;
+        border-radius: 3px 0 0 3px;
+      }
+      button[type="submit"] {
+        padding: 12px 20px;
+	height: 4em;
+        margin: 8px 0;
+        border: 2px;
+        border-radius: 3px 0 3px 0;
+        background-color: #CF9FFF;
+        color: white;
+      }
+      #chatlog {
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        max-height: calc(100vh - 10em);
+        overflow-y: auto;
+      }
+      #chatlog p {
+        margin: 0.5em 0;
+      }
+      #chatlog p.user {
+        text-align: right;
+        background-color: #CF9FFF;
+	color: white;
+      }
+      #chatlog p.bot {
+        text-align: left;
+        background-color: #D3D3D3;
+      }
+      #suggestions {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.5em;
+      }
+      #suggestions button {
+        margin: 0 0.5em 0.5em 0;
+        padding: 0.5em 1em;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: #FFFFFF;
+      }
+    </style>
+    <!-- script for tangle stuff-->
+    <link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
+
+    <script type="text/javascript" src="TangleKit/Tangle.js"></script>
+    <script type="text/javascript" src="TangleKit/mootools.js"></script>
+    <script type="text/javascript" src="TangleKit/sprintf.js"></script>
+    <script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
+    <script type="text/javascript" src="TangleKit/TangleKit.js"></script>
+
+    <script type="text/javascript">
+
+       	 function setUpTangle () {
+		var analysis1 = document.getElementById("dynThing1");
+	  	var analysis2 = document.getElementById("dynThing2");
+
+  		var analysis1Tangle = new Tangle(analysis1, {
+		initialize: function() {
+		this.dynVar1 = 10;
+			  	},
+				  update: function() {
+					  this.dynVar2 = Math.round(this.dynVar1 * 1000);
+					  this.dynVar3 = Math.round(this.dynVar1 * 1000000);
+					  this.dynVar4 = (this.dynVar1 / 1000);
+			  	}
+			  })
+
+  			;
+	  	}
+    </script>
+	  	  
+  </head>
+
+  <body onload="setUpTangle();">
+    <h1>Kombucha Prototype</h1>
+    <form id="chatform">
+      <input type="text" id="chatinput" placeholder="Enter your question here...">
+      <button type="submit">Send...</button>
+    </form>
+    <!-- Suggested questions.  Need to link these to input, and to get these from the backend.-->  
+    <div id="suggestions">
+      <button type="button" suggeestedQuestion1="What were apple's earnings in 2018?">What were apple's earnings in 2018?</button>
+      <button type="button" suggeestedQuestion2="What is top of mind for Tim Cook these days?">What is top of mind for Tim Cook these days?</button>
+      <button type="button" suggeestedQuestion3="Does Apple have supply chain issues?">Does Apple have supply chain issues?</button>
+    </div>
+    <div id="chatlog"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Script to call openai.  I am not redirecting it thru the backend.  If I get a chance I'll do that tonight.-->  
+    <script>
+      const API_KEY = "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";
+      const chatform = document.getElementById("chatform");
+      const chatinput = document.getElementById("chatinput");
+      const chatlog = document.getElementById("chatlog");
+      const suggestions = document.getElementById("suggestions");
+
+      chatform.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Get the user's input
+        const message = chatinput.value;
+
+        // Clear the input field
+        chatinput.value = "";
+
+        // Add the user's message to the chat log
+        const userMessage = document.createElement("p");
+        userMessage.innerText = "You: " + message;
+        userMessage.classList.add("user");
+        chatlog.appendChild(userMessage);
+
+        // Send the user's message to GPT-3
+        axios.post("https://api.openai.com/v1/completions", {
+          prompt: message,
+          model: "text-davinci-002",
+          temperature: 0.5,
+          max_tokens: 2048,
+          top_p: 1,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+        }, {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization":  `Bearer ${API_KEY}`,
+          },
+        }).then((response) => {
+          // Display the GPT-3 response in the chat log
+          const botMessage = document.createElement("p");
+          botMessage.innerText = "Bot: " + response.data.choices[0].text;
+          chatlog.appendChild(botMessage);
+        }).catch((error) => {
+          console.error(error);
+        });
+      });
+    </script>
+	<p>
+	<br>
+	<br>
+	<b>Basic showcase of Tangle (Thanks Bret Victor!  More examples here).</b>
+	
+	<p id="dynThing1">When thing1 is <span class="TKAdjustableNumber" data-var="dynVar1" data-min="1" data-max="1000" data-step="10"> </span> Mega thing units...
+		<br>...thing2 should be <b data-var="dynVar2"> </b> Kilo thing units.
+		<br>...thing3 should be <b data-var="dynVar3"> </b> thing units.
+		<br>...thing4 should be <b data-var="dynVar4"> </b> Giga thing units.
+    </p>
+  
+  </body>
+</html>
