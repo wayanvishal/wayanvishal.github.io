@@ -1,46 +1,122 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>MyKine - Find Your Kind</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div id="header">
-		<div id="logo">
-			<h1>MyKine</h1>
-			<h2>Find Your Kind</h2>
-		</div>
-		<div id="buttons">
-			<a href="login.html" class="button">Login</a>
-			<a href="signup.html" class="button">Sign Up</a>
-		</div>
-	</div>
-	<div id="tabs">
-		<ul>
-			<li><a href="#">Learn</a></li>
-			<li><a href="#">Organize</a></li>
-			<li><a href="#">Find</a></li>
-		</ul>
-	</div>
-	<div id="content">
-		<div class="box">
-			<a href="FindEvent.html">
-				<h3>Find a Drive</h3>
-				<img src="find-drive.jpg">
-			</a>
-		</div>
-		<div class="box">
-			<a href="CreateEvent.html">
-				<h3>Start a Drive</h3>
-				<img src="start-drive.jpg">
-			</a>
-		</div>
-		<div class="box">
-			<a href="WhyDonate.html">
-				<h3>Why Donate?</h3>
-				<img src="why-donate.jpg">
-			</a>
-		</div>
-	</div>
-</body>
+  <head>
+    <title>MyKine - Find Your Kind</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .background-image {
+        background-image: url("sky-blue.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: -1;
+      }
+
+      .content {
+        max-width: 800px;
+        margin: auto;
+        padding: 50px;
+        color: #fff;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 30px;
+        margin-top: 0;
+      }
+
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+
+      .box {
+        background-color: #fff;
+        color: #000;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+
+      .tabs a {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 2px solid #fff;
+        transition: all 0.3s ease;
+      }
+
+      .tabs a:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .buttons {
+        margin-top: 50px;
+      }
+
+      .buttons button {
+        background-color: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-right: 20px;
+      }
+
+      .buttons button:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-image"></div>
+    <div class="content">
+      <h1>MyKine</h1>
+      <h2>Find Your Kind</h2>
+      <div class="boxes">
+        <a href="FindEvent.html"><div class="box">Find a Drive</div></a>
+        <a href="CreateEvent.html"><div class="box">Start a Drive</div></a>
+        <a href="WhyDonate.html"><div class="box">Why Donate?</div></a>
+      </div>
+      <div class="tabs">
+        <a href="#">Learn</a>
+        <a href="#">Organize</a>
+        <a href="#">Find</a>
+      </div>
+      <div class="buttons">
+        <a href="Login.html"><button>Login</button></a>
+        <a href="Signup.html"><button>Signup</button></a>
+      </div>
+    </div>
+  </body>
 </html>
